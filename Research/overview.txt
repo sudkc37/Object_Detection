@@ -1,0 +1,9 @@
+Beyond the Surface: Intelligent Object Recognition and Text Retrieval
+
+Part I: Build  Optical Character Recognition (OCR) Model
+
+
+Part II: Build Object Detection Model
+
+
+Part III: Combine OCR with Object Detection
