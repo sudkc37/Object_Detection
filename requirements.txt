@@ -2,3 +2,7 @@ torch
 tensorflow
 easyocr
 matplotlib
+transformers
+pytorch-lightning
+supervision==0.3.0
+roboflow
