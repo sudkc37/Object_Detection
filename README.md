@@ -10,8 +10,13 @@ The rapid advancements in computer vision and Natural Language Processing (NLP) 
 
 
 **Model Overview**
+Optical Character Recognition (OCR)
+
+facebook/detr-resnet-50
 
 **Implementation Details**
+Liabrier overview
+fine-tuning process
 
 **Results**
 
