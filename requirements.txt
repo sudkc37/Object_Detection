@@ -6,3 +6,5 @@ transformers
 pytorch-lightning
 supervision==0.3.0
 roboflow
+timm
+pycocotools
