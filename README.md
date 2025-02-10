@@ -1,24 +1,13 @@
-# Beyond the Surface: Intelligent Object Recognition and Text Retrieval
+# Intelligent Object Recognition and Text Retrieval
 
-**Abstract:**
+**Model Overview:**
+Our proposed model is designed as a two-stage pipeline combining a Detection Transformer and an Optical Character Recognition model to efficiently extract textual information from images in real time. The primary objective is to first identify relevant regions containing text using a detection model and then process those regions using OCR model to extract the actual text content. 
+In the first stage, we employ a Detection Transformer (DETR), which is retrained on a specific dataset (i,e license plate) from RoboFlow to detect text regions in an image. This model outputs a set of bounding boxes and object labels. Let f_θ be the retrained Detection Transformer model with parameters θ. Given the input image I, the model predicts bounding boxes and object classes i.e. P= f_θ  (I), where P is the set of detected bounding boxes and associated labels. 
 
-This project presents an intelligent system that combines object detection and Optical Character Recognition (OCR) for real-time vehicle license plate recognition. Leveraging a pre-trained deep learning model, the system accurately identifies vehicles and isolates their license plates. OCR is subsequently employed to extract alphanumeric characters from the detected plates, enabling seamless text retrieval. By integrating advanced computer vision techniques and Natural Language Processing (NLP), the system ensures high accuracy and robustness in dynamic, real-world environments. This solution has significant applications in automated toll systems, traffic monitoring, and parking management, offering a scalable approach to efficient and reliable license plate recognition.
+The second stage involves an OCR model which takes the detected regions as an input and extracts textual content from them. The OCR model processes each detected region independently, using deep learning techniques to recognize characters and words with high accuracy. Let g_∅ be the Optical Character Recognition (OCR) model with parameters ∅, which takes the detected regions from P and extracts text T i.e. T= g_∅  (P).
 
-**Introduction**
+Overall, the entire pipeline can be represented as a composite function.
+h_(θ,∅)  (I), = g_∅ ( f_θ  (I))
+This modular approach ensures efficient text extraction by first localizing textual regions and then applying OCR to those regions, rather than processing the entire image. The model architecture is represented as follow.
 
-The rapid advancements in computer vision and Natural Language Processing (NLP) have paved the way for automated systems in various industries, with vehicle license plate recognition emerging as a key application in traffic monitoring, toll collection, and parking management. However, existing solutions often face challenges such as low accuracy under varying environmental conditions, real-time processing constraints, and the complexity of integrating object detection with Optical Character Recognition (OCR). This project aims to address these issues by developing a robust and efficient system for real-time license plate recognition. Leveraging pre-trained models, specifically facebook's 'detr-resnet-50', the system was fine-tuned using labeled data from RoboFlow to detect vehicles and isolate license plates accurately. The data pipeline was built using liabraries like Supervision, PyTorch-Lightning, torchvision, and Transformers, ensuring seamless preprocessing, augmentation, and model retraining. OCR capabilities, powered by Tesseract, were integrated to extract alphanumeric characters from detected plates. The entire solution, incorporating image preprocessing with OpenCV, is deployed using Flask for real-time predictions and Docker for environment compatibility. This project strives to enhance the operational efficiency of automated vehicle systems while ensuring scalability and accuracy in real-world environments.
 
-
-**Model Overview**
-
-Optical Character Recognition (OCR)
-
-facebook/detr-resnet-50
-
-**Implementation Details**
-Liabrier overview
-fine-tuning process
-
-**Results**
-
-**Conclusion and Future Work**
