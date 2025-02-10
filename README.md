@@ -11,3 +11,4 @@ h_(θ,∅)  (I), = g_∅ ( f_θ  (I))
 This modular approach ensures efficient text extraction by first localizing textual regions and then applying OCR to those regions, rather than processing the entire image. The model architecture is represented as follow.
 
 
+<img width="914" alt="Screenshot 2025-02-10 at 11 34 08 AM" src="https://github.com/user-attachments/assets/36aba1da-e9cb-4e93-8607-fb587ffda959" />
